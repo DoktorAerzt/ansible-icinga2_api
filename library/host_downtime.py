@@ -70,20 +70,11 @@ author:
 
 EXAMPLES = r'''
 # Pass in a message
-- name: Test with a message
-  my_namespace.my_collection.my_test:
-    name: hello world
-
-# pass in a message and have changed true
-- name: Test with a message and changed output
-  my_namespace.my_collection.my_test:
-    name: hello world
-    new: true
-
-# fail the module
-- name: Test failure of the module
-  my_namespace.my_collection.my_test:
-    name: fail me
+- name: run the new module
+    host_downtime:
+    host: FQDN
+    config_file: /path/to/config_file
+    api_endpoint: https://localhost:5665
 '''
 
 RETURN = r'''
